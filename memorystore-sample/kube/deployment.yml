@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s17573test
+  labels:
+    app: s17573test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: s17573test
+  template:
+    metadata:
+      labels:
+        app: s17573test
+    spec:
+      containers:
+      - name: s17573-memorystore-test
+        image: gcr.io/gcp-abema-playground/s17573:latest
